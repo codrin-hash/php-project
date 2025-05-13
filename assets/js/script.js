@@ -1,4 +1,4 @@
-    document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const searchInput = form.querySelector("input[name='search']");
     const productList = document.getElementById("product-list");
