@@ -14,10 +14,14 @@
     </head>
     <body>
 
-        <h1>Product List</h1>
+        <h1>Product Management System</h1>
+
+        <?php include 'navbar.php'; ?>
+
+        <h2>Product List</h2>
 
         <!-- Zona de search -->
-        <form method="GET" action="index.php" id="search-form">
+        <form method="GET" action="index.php" class="search-form">
             <input type="text" name="search" placeholder="Search by name" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
             <button type="submit">Search</button>
         </form>
@@ -26,6 +30,5 @@
         <div id="product-list">
             <?php include 'products_ajax.php'; ?>
         </div>
-
     </body>
 </html>

@@ -12,8 +12,14 @@
             ]);
         }
 
-        public function query($query){
+        public function query($query, $params = []){
             $stmt = $this->conn->prepare($query);
+
+            foreach ($params as $key => $value) {
+                $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+                $stmt->bindValue($key, $value, $type);
+            }
+
             $stmt->execute();
 
             return $stmt;

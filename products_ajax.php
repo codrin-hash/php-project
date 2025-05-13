@@ -22,24 +22,15 @@
     $sql = "SELECT * FROM products $filter LIMIT :limit OFFSET :offset";
     $countSql = "SELECT COUNT(*) AS total FROM products $filter";
 
-
     $paramsWithLimits = $params;
     $paramsWithLimits[':limit'] = $limit;
     $paramsWithLimits[':offset'] = $offset;
 
-    $stmt = $db->conn->prepare($sql);
-    foreach ($paramsWithLimits as $key => $val) {
-        $stmt->bindValue($key, $val, is_int($val) ? PDO::PARAM_INT : PDO::PARAM_STR);
-    }
-    $stmt->execute();
+    $stmt = $db->query($sql, $paramsWithLimits);
     $products = $stmt->fetchAll();
 
     // Total pagini
-    $countStmt = $db->conn->prepare($countSql);
-    foreach ($params as $key => $val) {
-        $countStmt->bindValue($key, $val, PDO::PARAM_STR);
-    }
-    $countStmt->execute();
+    $countStmt = $db->query($countSql, $params);
     $total = $countStmt->fetchColumn();
     $totalPages = ceil($total / $limit);
 ?>
