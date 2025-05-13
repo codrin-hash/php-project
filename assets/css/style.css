@@ -43,7 +43,11 @@ button {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    background-color: white;
+    min-width: 800px; /* pentru responsive scroll */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 th, td {
