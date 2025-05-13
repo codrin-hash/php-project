@@ -53,7 +53,7 @@
                         <td><?= htmlspecialchars($p['description']) ?></td>
                         <td><?= number_format($p['price'], 2) ?> €</td>
                         <td>
-                            <?= $p['image'] ? '<img src="uploads/' . htmlspecialchars($p['image']) . '">' : 'No image' ?>
+                            <?= $p['image'] ? '<img src="assets/uploads/' . htmlspecialchars($p['image']) . '">' : 'No image' ?>
                         </td>
                         <td><?= htmlspecialchars($p['availability_date']) ?></td>
                         <td><?= $p['stock_status'] ? 'Yes' : 'No' ?></td>

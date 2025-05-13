@@ -30,7 +30,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Create & Edit Product</title>
         <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/product_form.js" defer></script>
+        <script src="assets/js/products.js" defer></script>
     </head>
     <body>
 
@@ -58,6 +58,9 @@
             <label><input type="checkbox" name="stock_status" value="1"> In Stock</label><br><br>
 
             <button type="submit">Create Product</button>
+
+            <div id="create-message" class="form-message"></div>
+
         </form>
 
         <hr>
@@ -96,7 +99,11 @@
             </label>
 
             <button type="submit">Update Product</button>
+
+            <div id="edit-message" class="form-message"></div>
+
         </form>
+        
 
         <div id="form-message"></div>
 
